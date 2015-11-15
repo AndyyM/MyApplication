@@ -23,7 +23,7 @@ private Button t1;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        buttonLister();
+        setupList();
 
 
 
@@ -31,17 +31,8 @@ private Button t1;
 
     }
 
-    public void buttonLister(){
-        Button t1 = (Button)findViewById(R.id.button);
-        t1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, SecondScreen.class));
-            }
-        });
 
 
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -50,9 +41,30 @@ private Button t1;
         return true;
     }
 
+    public void setupList(){
+
+            ListView listView = (ListView) findViewById(R.id.listView);
+            String[] apps = new String[] {"Currency Converter"};
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, apps);
+            listView.setAdapter(adapter);
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    switch (position) {
+                        case 0:
+                            startActivity(new Intent(MainActivity.this, SecondScreen.class));
+
+                            break;
+
+
+                    }
+
+                    }
+    });
 
 
 
 
 
+}
 }

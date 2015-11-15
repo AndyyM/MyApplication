@@ -57,8 +57,8 @@ public class SecondScreen extends Activity {
         setContentView(R.layout.second_screen);
 
         Button convert = (Button) findViewById(R.id.button2);
-        final EditText usdValue = (EditText) findViewById(R.id.editText2);
-        final TextView gbpValue = (TextView) findViewById(R.id.textView);
+        final EditText writeValue = (EditText) findViewById(R.id.editText2);
+        final TextView textValue = (TextView) findViewById(R.id.textView);
 
         final Spinner spinner = (Spinner)findViewById(R.id.spinner2);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.countries, android.R.layout.simple_spinner_item);
@@ -102,7 +102,7 @@ public class SecondScreen extends Activity {
         convert.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (!usdValue.getText().toString().equals("")) {
+                    if (!writeValue.getText().toString().equals("")) {
                         AsyncHttpClient client = new AsyncHttpClient();
                         client.get(URL_CUR, new AsyncHttpResponseHandler() {
 
@@ -139,12 +139,12 @@ public class SecondScreen extends Activity {
                                     Double rRate = ratesObject.getDouble(dataTest2);
 
 
-                                    Double values = Double.valueOf(usdValue
+                                    Double values = Double.valueOf(writeValue
                                             .getText().toString());
                                      Double finalCost = values *rRate;
                                     Log.d("data", dataTest2);
                                     String test1 = String.format("%.2f",finalCost);
-                                    gbpValue.setText(dataTest2 + "   "
+                                    textValue.setText(dataTest2 + " "
                                             + test1);
 
 

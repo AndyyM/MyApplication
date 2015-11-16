@@ -44,7 +44,7 @@ private Button t1;
     public void setupList(){
 
             ListView listView = (ListView) findViewById(R.id.listView);
-            String[] apps = new String[] {"Currency Converter"};
+            String[] apps = new String[] {"Currency Converter", "Reddit RocketLeague"};
             ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, apps);
             listView.setAdapter(adapter);
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -54,6 +54,9 @@ private Button t1;
                         case 0:
                             startActivity(new Intent(MainActivity.this, SecondScreen.class));
 
+                            break;
+                        case 1:
+                            startActivity(new Intent(MainActivity.this,RedditScreen.class));
                             break;
 
 

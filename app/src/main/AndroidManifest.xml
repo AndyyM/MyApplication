@@ -33,6 +33,16 @@
                 <category android:name ="android.intent.content.DEFAULT"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name = ".RedditScreen"
+            android:label= "RedditScreen">
+
+            <intent-filter>
+                <action android:name ="com.example.andy.myapplication.RedditScreen"/>
+                <category android:name ="android.intent.content.DEFAULT"/>
+            </intent-filter>
+
+        </activity>
     </application>
 
 

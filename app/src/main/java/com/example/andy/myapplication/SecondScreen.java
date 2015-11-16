@@ -1,6 +1,6 @@
 package com.example.andy.myapplication;
 
-import com.example.andy.myapplication.Data.CurrencyObject;
+
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 

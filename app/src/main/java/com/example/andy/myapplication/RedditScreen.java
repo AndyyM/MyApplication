@@ -17,6 +17,7 @@ public class RedditScreen extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.reddit_screen);
 
+
         redditWebView = (WebView) findViewById(R.id.reddit_webview);
         WebSettings settings = redditWebView.getSettings();
         settings.setJavaScriptEnabled(true);

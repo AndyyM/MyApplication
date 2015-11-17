@@ -43,11 +43,12 @@ import cz.msebera.android.httpclient.Header;
  */
 public class SecondScreen extends Activity {
 
-    String [] countries =  {"AUD","BGN","BRL","CAD","CHF","CNY","CZK","DKK","GBP","HKD","HRK","HUF","ISK","JPY",
-            "KRW","MXN","MYR","NOK","NZD","PHP","PLN","RON","RUB","SEK","SGD","THB","TRY","USD","ZAR"};
-    private String dataTest1;
-    private String dataTest2;
-    public String URL_CUR;
+   // String [] countries =  {"AUD","BGN","BRL","CAD","CHF","CNY","CZK","DKK","GBP","HKD","HRK","HUF","ISK","JPY",
+     //       "KRW","MXN","MYR","NOK","NZD","PHP","PLN","RON","RUB","SEK","SGD","THB","TRY","USD","ZAR"};
+    //private String dataTest1;
+    //private String dataTest2;
+    //public String URL_CUR;
+    CurrencyConverter c1 = new CurrencyConverter();
 
 
 
@@ -71,9 +72,11 @@ public class SecondScreen extends Activity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
                 int currency_value = spinner.getSelectedItemPosition();
-                dataTest1 = countries[currency_value];
-                URL_CUR = "http://api.fixer.io/latest?base=" + dataTest1;
-                Log.d("tester:" , URL_CUR);
+                //dataTest1 = countries[currency_value];
+                c1.setDataTest1(c1.getCountries()[currency_value]);
+                //URL_CUR = "http://api.fixer.io/latest?base=" + dataTest1;
+                c1.setURL("http://api.fixer.io/latest?base=" + c1.getDataTest1());
+                Log.d("tester:" , c1.getURL());
             }
 
             @Override
@@ -85,8 +88,9 @@ public class SecondScreen extends Activity {
         spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
                 int currency_value = spinner2.getSelectedItemPosition();
-                dataTest2 = countries[currency_value];
-                Log.d("test", countries[currency_value]);
+                //dataTest2 = countries[currency_value];
+                c1.setDataTest2(c1.getCountries()[currency_value]);
+                Log.d("test", c1.getCountries()[currency_value]);
             }
 
             @Override
@@ -104,7 +108,10 @@ public class SecondScreen extends Activity {
                 public void onClick(View v) {
                     if (!writeValue.getText().toString().equals("")) {
                         AsyncHttpClient client = new AsyncHttpClient();
-                        client.get(URL_CUR, new AsyncHttpResponseHandler() {
+                        client.get(c1.getURL(), new AsyncHttpResponseHandler() {
+
+                        //client.get(URL_CUR, new AsyncHttpResponseHandler() {
+
 
                             @Override
                             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
@@ -136,16 +143,19 @@ public class SecondScreen extends Activity {
                                             .getJSONObject("rates");
 
 
-                                    Double rRate = ratesObject.getDouble(dataTest2);
+                                    //Double rRate = ratesObject.getDouble(dataTest2);
+                                    Double rRate = ratesObject.getDouble(c1.getDataTest2());
 
 
                                     Double values = Double.valueOf(writeValue
                                             .getText().toString());
                                      Double finalCost = values *rRate;
-                                    Log.d("data", dataTest2);
+                                    //Log.d("data", dataTest2);
+                                    Log.d("data",c1.getDataTest2());
                                     String test1 = String.format("%.2f",finalCost);
-                                    textValue.setText(dataTest2 + " "
-                                            + test1);
+                                   // textValue.setText(dataTest2 + " "
+                                     //       + test1);
+                                    textValue.setText(c1.getDataTest2() + " " + test1);
 
 
                                 } catch (JSONException e) {

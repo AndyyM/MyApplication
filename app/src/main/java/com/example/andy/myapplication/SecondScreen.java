@@ -136,35 +136,7 @@ public class SecondScreen extends Activity {
                             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                                 Log.i("Testing", "HTTP Success");
 
-                                try {
-                                    String str = new String(responseBody, "UTF-8");
-                                    JSONObject jsonObj = new JSONObject(str);
-                                    JSONObject ratesObject = jsonObj
-                                            .getJSONObject("rates");
-
-
-                                    //Double rRate = ratesObject.getDouble(dataTest2);
-                                    Double rRate = ratesObject.getDouble(c1.getDataTest2());
-
-
-                                    Double values = Double.valueOf(writeValue
-                                            .getText().toString());
-                                     Double finalCost = values *rRate;
-                                    //Log.d("data", dataTest2);
-                                    Log.d("data",c1.getDataTest2());
-                                    String test1 = String.format("%.2f",finalCost);
-                                   // textValue.setText(dataTest2 + " "
-                                     //       + test1);
-                                    textValue.setText(c1.getDataTest2() + " " + test1);
-
-
-                                } catch (JSONException e) {
-                                    // TODO Auto-generated catch block
-                                    e.printStackTrace();
-                                } catch (UnsupportedEncodingException e) {
-                                    e.printStackTrace();
-                                }
-
+                                c1.test(responseBody, writeValue,textValue);
                             }
                         });
                     } else {

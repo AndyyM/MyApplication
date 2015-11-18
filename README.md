@@ -4,7 +4,7 @@ After I have done a few different things I will probably split them up into diff
 
 **Simple Currency Converter**
 
-
+Simple converter using fixer.io API.
 Spinners used to choose between different currencies. 
 Write in empty text field a value to convert.
 

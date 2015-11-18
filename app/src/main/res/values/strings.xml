@@ -4,35 +4,35 @@
     <string name="title_activity_main2">Main2Activity</string>
     <string-array name="countries">
 
-        <item>Australian Dollar(AUD)</item>
-        <item>Bulgarian lev(BGN)</item>
-        <item>Brazilian real(BRL)</item>
-        <item>Canadian dollar(CAD)</item>
-        <item>Swiss Franc(CHF)</item>
-        <item>Chinese yuan renminbi(CNY)</item>
-        <item>Czech koruna(CZK)</item>
-        <item>Danish krone(DKK)</item>
-        <item>Pound sterling(GBP)</item>
-        <item>Hong Kong dollar(HKD)</item>
-        <item>Croatian kuna(HRK)</item>
-        <item>Hungarian forint(HUF)</item>
-        <item>Icelandic krona(ISK)</item>
-        <item>Japanese yen(JPY)</item>
-        <item>South Korean won(KRW)</item>
-        <item>Mexican peso(MXN)</item>
-        <item>Malaysian ringgit(MYR)</item>
-        <item>Norwegian krone(NOK)</item>
-        <item>New Zealand dollar(NZD)</item>
-        <item>Philippine peso(PHP)</item>
-        <item>Polish zloty(PLN)</item>
-        <item>Romanian leu(RON)</item>
-        <item>Russian rouble(RUB)</item>
-        <item>Swedish krona(SEK)</item>
-        <item>Singapore dollar(SGD)</item>
-        <item>Thai baht(THB)</item>
-        <item>Turkish lira(TRY)</item>
-        <item>US dollar(USD)</item>
-        <item>South African rand(ZAR)</item>
+        <item>Australian Dollar</item>
+        <item>Bulgarian lev</item>
+        <item>Brazilian real</item>
+        <item>Canadian dollar</item>
+        <item>Swiss Franc</item>
+        <item>Chinese yuan</item>
+        <item>Czech koruna</item>
+        <item>Danish krone</item>
+        <item>Pound sterling</item>
+        <item>Hong Kong dollar</item>
+        <item>Croatian kuna</item>
+        <item>Hungarian forint</item>
+        <item>Icelandic krona</item>
+        <item>Japanese yen</item>
+        <item>South Korean won</item>
+        <item>Mexican peso</item>
+        <item>Malaysian ringgit</item>
+        <item>Norwegian krone</item>
+        <item>New Zealand dollar</item>
+        <item>Philippine peso</item>
+        <item>Polish zloty</item>
+        <item>Romanian leu</item>
+        <item>Russian rouble</item>
+        <item>Swedish krona</item>
+        <item>Singapore dollar</item>
+        <item>Thai baht</item>
+        <item>Turkish lira</item>
+        <item>US dollar</item>
+        <item>South African rand</item>
 
 
     </string-array>

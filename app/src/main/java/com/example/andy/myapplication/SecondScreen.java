@@ -5,6 +5,9 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import android.app.Activity;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,7 +37,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
@@ -49,6 +55,8 @@ public class SecondScreen extends Activity {
     //private String dataTest2;
     //public String URL_CUR;
     CurrencyConverter c1 = new CurrencyConverter();
+    int[] testArray;
+
 
 
 
@@ -56,6 +64,12 @@ public class SecondScreen extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.second_screen);
+
+
+        testArray = getResources().getIntArray(R.array.flags);
+
+
+
 
         Button convert = (Button) findViewById(R.id.button2);
         final EditText writeValue = (EditText) findViewById(R.id.editText2);
@@ -74,6 +88,11 @@ public class SecondScreen extends Activity {
                 int currency_value = spinner.getSelectedItemPosition();
                 //dataTest1 = countries[currency_value];
                 c1.setDataTest1(c1.getCountries()[currency_value]);
+                TypedArray imgRes = getResources().obtainTypedArray(R.array.flags);
+                ImageView flag = (ImageView)findViewById(R.id.imageView);
+                flag.setImageResource(imgRes.getResourceId(currency_value, -1));
+
+
                 //URL_CUR = "http://api.fixer.io/latest?base=" + dataTest1;
                 c1.setURL("http://api.fixer.io/latest?base=" + c1.getDataTest1());
                 Log.d("tester:" , c1.getURL());

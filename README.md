@@ -12,13 +12,13 @@ Write in empty text field a value to convert.
 
 Portrait
 
-![My image](https://github.com/AndyyM/MyApplication/blob/master/screenshots/Screenshot_2015-11-18-05-51-21.png)
+![My image](https://github.com/AndyyM/MyApplication/blob/master/screenshots/Portrait.png)
 
 
 
 Landscape
 
-![My image2](https://github.com/AndyyM/MyApplication/blob/master/screenshots/Screenshot_2015-11-18-05-51-33.png)
+![My image2](https://github.com/AndyyM/MyApplication/blob/master/screenshots/Landscape.png)
 
 
 USD to GBP Example

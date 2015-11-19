@@ -19,11 +19,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Main2Activity"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
             android:name=".SecondScreen"
             android:label="SecondScreen">
 
@@ -42,6 +37,21 @@
                 <category android:name ="android.intent.content.DEFAULT"/>
             </intent-filter>
 
+        </activity>
+        <activity android:name=".TwitterScreen"
+            android:label = "TwitterScreen">
+            <intent-filter>
+                <action android:name ="com.example.andy.myapplication.TwitterScreen"/>
+                <category android:name = "android.intent.content.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".FacebookScreen"
+            android:label ="FacebookScreen">
+
+            <intent-filter>
+                <action android:name ="com.example.andy.myapplication.FacebookScreen"/>
+                <category android:name = "android.intent.content.DEFAULT"/>
+            </intent-filter>
         </activity>
     </application>
 

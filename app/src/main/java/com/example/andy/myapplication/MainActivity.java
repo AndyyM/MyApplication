@@ -44,7 +44,7 @@ private Button t1;
     public void setupList(){
 
             ListView listView = (ListView) findViewById(R.id.listView);
-            String[] apps = new String[] {"Currency Converter", "Reddit RocketLeague"};
+            String[] apps = new String[] {"Currency Converter", "Reddit RocketLeague", "Twitter" , "Facebook"};
             ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, apps);
             listView.setAdapter(adapter);
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -58,6 +58,11 @@ private Button t1;
                         case 1:
                             startActivity(new Intent(MainActivity.this,RedditScreen.class));
                             break;
+                        case 2:
+                            startActivity(new Intent(MainActivity.this,TwitterScreen.class));
+                            break;
+                        case 3:
+                            startActivity(new Intent(MainActivity.this,FacebookScreen.class));
 
 
                     }

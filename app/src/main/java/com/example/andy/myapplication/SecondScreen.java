@@ -17,6 +17,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -60,6 +61,7 @@ public class SecondScreen extends Activity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,7 +92,9 @@ public class SecondScreen extends Activity {
                 c1.setDataTest1(c1.getCountries()[currency_value]);
                 TypedArray imgRes = getResources().obtainTypedArray(R.array.flags);
                 ImageView flag = (ImageView)findViewById(R.id.imageView);
+
                 flag.setImageResource(imgRes.getResourceId(currency_value, -1));
+
 
 
                 //URL_CUR = "http://api.fixer.io/latest?base=" + dataTest1;
@@ -107,6 +111,10 @@ public class SecondScreen extends Activity {
         spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
                 int currency_value = spinner2.getSelectedItemPosition();
+                TypedArray imgRes2 = getResources().obtainTypedArray(R.array.flags);
+                ImageView flag2 = (ImageView)findViewById(R.id.imageView2);
+
+                flag2.setImageResource(imgRes2.getResourceId(currency_value, -1));
                 //dataTest2 = countries[currency_value];
                 c1.setDataTest2(c1.getCountries()[currency_value]);
                 Log.d("test", c1.getCountries()[currency_value]);

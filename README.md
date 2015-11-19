@@ -21,8 +21,6 @@ Landscape
 ![My image2](https://github.com/AndyyM/MyApplication/blob/master/screenshots/Landscape.png)
 
 
-USD to GBP Example
 
-![My image3](https://github.com/AndyyM/MyApplication/blob/master/screenshots/Screenshot_2015-11-18-06-03-18.png)
 
 

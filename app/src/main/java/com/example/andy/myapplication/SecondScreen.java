@@ -56,31 +56,35 @@ public class SecondScreen extends Activity {
     //private String dataTest2;
     //public String URL_CUR;
     CurrencyConverter c1 = new CurrencyConverter();
+    //Array of integers to store flag image instances.
     int[] testArray;
 
 
-
-
-
+    /**
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.second_screen);
 
-
+        //Pulls the flags from resources using ints.
         testArray = getResources().getIntArray(R.array.flags);
 
 
 
 
         Button convert = (Button) findViewById(R.id.button2);
+        //Write what value you want to convert
         final EditText writeValue = (EditText) findViewById(R.id.editText2);
+        //Value that shows up when it is data is retrieved from API
         final TextView textValue = (TextView) findViewById(R.id.textView);
-
+        //Spinner that allows the user to go through all the countries they want to input
         final Spinner spinner = (Spinner)findViewById(R.id.spinner2);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.countries, android.R.layout.simple_spinner_item);
         spinner.setAdapter(adapter);
-
+        //Spinner that allows the user to go through all the countries they want to retrieve
         final Spinner spinner2 = (Spinner)findViewById(R.id.spinner3);
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.countries, android.R.layout.simple_spinner_item);
         spinner2.setAdapter(adapter2);
@@ -98,8 +102,10 @@ public class SecondScreen extends Activity {
 
 
                 //URL_CUR = "http://api.fixer.io/latest?base=" + dataTest1;
+                //Sets the URL to which pulls the data which pulls the rates so it can be calculated later
                 c1.setURL("http://api.fixer.io/latest?base=" + c1.getDataTest1());
                 Log.d("tester:" , c1.getURL());
+                // System.out.println("Gets here");
             }
 
             @Override
@@ -168,7 +174,7 @@ public class SecondScreen extends Activity {
                         });
                     } else {
                         Toast.makeText(getApplicationContext(),
-                                "Please enter a value",
+                                "Enter value: ",
                                 Toast.LENGTH_LONG).show();
 
                     }
